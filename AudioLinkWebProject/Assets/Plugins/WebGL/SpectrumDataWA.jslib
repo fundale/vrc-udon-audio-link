@@ -1,3 +1,4 @@
+// Modified from: https://github.com/Lakistein/Unity-Audio-Visualizers
  /**
   * Functions and logic to get data from a currently playing source, by setting up an AnalyserNode to watch
   * a source in the Web Audio API. This will not work in browsers that do not use the Web Audio API (IE).
