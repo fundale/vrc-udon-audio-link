@@ -84,14 +84,14 @@ namespace AudioLink
 
                 if (!VRCJson.TryDeserializeFromJson(_midiConfig.text, out DataToken jsonDataToken)) // Json had a parsing error
                 {
-                    Debug.LogError("[AudioLink-Midi] Json Parsing Failed!");
+                    Debug.LogError("[AudioLink.MIDI] Json Parsing Failed!");
                     return;
                 }
 
                 _json = jsonDataToken.DataDictionary;
                 if ((int)_json["ConfigFormat"].Number != _midiConfigFormatVersion) // Config uses different formatting
                 {
-                    Debug.LogError("[AudioLink-Midi] Configuration uses a different configuration format! Please use a newer or older file with the same format (" + _midiConfigFormatVersion + ")!");
+                    Debug.LogError("[AudioLink.MIDI] Configuration uses a different configuration format! Please use a newer or older file with the same format (" + _midiConfigFormatVersion + ")!");
                     return;
                 }
 
@@ -102,7 +102,7 @@ namespace AudioLink
             else
             {
 
-                Debug.LogWarning("[AudioLink-Midi] Midi Controller has no configuration file!");
+                Debug.LogWarning("[AudioLink.MIDI] MIDI Controller has no configuration file!");
 
             }
 
@@ -147,7 +147,7 @@ namespace AudioLink
             else
             {
 
-                Debug.LogWarning("[AudioLink-Midi] Configuration is not loaded or broken!");
+                Debug.LogWarning("[AudioLink.MIDI] Configuration is not loaded or broken!");
 
             }
 

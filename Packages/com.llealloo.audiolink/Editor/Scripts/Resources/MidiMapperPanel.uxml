@@ -1,0 +1,26 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xmlns="UnityEngine.UIElements" editor-extension-mode="True">
+    <uie:ObjectField type="UnityEngine.TextAsset, UnityEngine.CoreModule" label="Midi JSON config" name="MidiConfig" />
+    <ui:VisualElement name="RootPanel" class="col" style="width: 100%; height: 100%; position: absolute; left: 0; top: 20px; right: 0; bottom: 0;">
+        <ui:VisualElement name="Selector" style="flex-grow: 1; justify-content: flex-start; align-self: flex-start; flex-direction: column; align-items: stretch; height: 100%; position: absolute; left: 0; top: 0; right: 50%; bottom: 0; width: 50%; flex-basis: auto; flex-wrap: nowrap;">
+            <ui:DropdownField label="Deck" index="0" name="Decks" choices="Virtual" style="align-items: stretch; position: relative; top: 0; align-self: auto; flex-direction: row; right: auto; width: 100%; height: auto; justify-content: flex-start;" />
+            <ui:VisualElement name="AddRemoveButtons" style="flex-grow: 1; width: 100%; height: auto; flex-wrap: nowrap; flex-direction: row; min-height: 20px;">
+                <ui:Button text="Remove" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RemoveDeck" style="width: 45%; flex-direction: column; flex-wrap: nowrap; align-items: stretch; justify-content: flex-start; align-self: auto; position: relative;" />
+                <ui:Button text="Add" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AddDeck" style="width: 45%; position: relative; align-self: auto; right: auto; align-items: auto; justify-content: flex-start;" />
+            </ui:VisualElement>
+            <ui:TextField picking-mode="Ignore" label="Deck Name" value="Virtual" name="DeckName" />
+            <ui:TextField picking-mode="Ignore" label="Deck Manufacturer" value="Virtual" name="DeckManufacturer" />
+            <ui:VisualElement name="Spacer" style="flex-grow: 1; width: 100%; height: 25px; flex-wrap: nowrap; flex-direction: row;" />
+            <ui:ListView focusable="true" name="DeckKeys" reorderable="false" show-border="true" show-alternating-row-backgrounds="All" show-add-remove-footer="true" show-foldout-header="false" reorder-mode="Animated" style="justify-content: flex-start; height: 100%; bottom: 20px; position: relative; width: 100%; top: auto; left: 2px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Options" style="flex-grow: 1; align-self: flex-end; flex-direction: column; align-items: stretch; justify-content: flex-start; height: 100%; position: absolute; left: 50%; top: 0; right: 0; bottom: 0; width: 50%; opacity: 1; display: flex; visibility: visible; overflow: visible; flex-basis: auto;">
+            <ui:DropdownField label="Key Action" index="0" choices="Enabled,ColorChord,AutoGain,Reset,BandSelect0,BandSelect1,BandSelect2,BandSelect3,Gain,Bass,Treble,Length,Falloff,BandSelectHue,BandSelectSaturation,BandSelectValue,BandSelectThreshold,BandSelectStart" name="EventName" />
+            <ui:DropdownField label="Key Type" index="0" choices="Key,Knob" name="KeyType" />
+            <ui:UnsignedIntegerField label="Key ID" value="0" name="EventKey" />
+            <ui:Button text="Update Key" parse-escape-sequences="true" display-tooltip-when-elided="true" name="UpdateKeyButton" style="position: relative; visibility: visible;" />
+            <ui:Button text="Save" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SaveButton" style="bottom: 20px; position: absolute; width: 95%; -unity-text-align: middle-center; text-overflow: clip; right: 2px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="ErrorPanel" style="flex-grow: 1;">
+            <ui:Label tabindex="-1" text="No file selected!" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ErrorLabel" style="-unity-text-align: middle-center; bottom: auto; top: 40%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
